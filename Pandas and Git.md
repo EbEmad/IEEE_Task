@@ -17,19 +17,19 @@ Speaking of *analyzing, cleaning, exploring, and manipulating* data, what functi
 
 function | what it does | category
 ------------ | ----------- | ---------
-`astype()` |   |  
-`groupby()` |   |  
-`sort_values()` |   |  
-`pivot_table()` |   |  
-`merge()` |   |  
-`plot()` |   |  
-`corr()` |   |  
-`cov()` |   |  
-`apply()` |   |  
-`loc()` |   |  
-`iloc()` |   |  
-`iterrows()` |   |  
-`aggregate()` |   |
+astype()	|Casts a pandas object to a specified datatype.|	Data Manipulation
+groupby()	| Groups data based on one or more columns and applies a function to each group|Data Manipulation
+sort_values()	|Sorts a DataFrame by one or more columns |	Data Manipulation
+ pivot_table()	|Creates a spreadsheet-style pivot table as a DataFrame|	Data Manipulation
+merge()|	Merges two or more DataFrames into a single DataFrame|	Data Manipulation
+plot()	|Creates a variety of plots, including line, bar, and scatter plots|	Data Visualization
+corr()|	Computes pairwise correlation of columns, excluding NA/null values.	|Data Analysis
+cov()	|Computes pairwise covariance of columns, excluding NA/null values.	|Data Analysis
+apply()	|Applies a function along an axis of the DataFrame|	Data Manipulation
+loc()	|Accesses a group of rows and columns by label(s) or a boolean array.	|Indexing and Selecting Data
+iloc()|	Accesses a group of rows and columns by integer position(s).	|Indexing and Selecting Data
+iterrows()	|Iterates over the rows of a DataFrame as (index, Series) pairs.	|Iteration
+aggregate()|	Applies one or more operations to groups of data.| Similar to groupby().
 
 $\rightarrow$ You may insert code snippets here if you like!
 
@@ -48,6 +48,8 @@ c = np.vstack((a, b))
 
 print(c[1][2])
 ```
+# Output = 6 because it will become as 2D Array so c[1][2] is the element int the second row and the third column 
+
 
 
 - What is the output of the following code? And why is it so?
@@ -59,6 +61,7 @@ c = np.intersect1d(a, b)
 
 print(c)
 ```
+# Output = [] because there is no common elements between two arrays
 
   
 - What is the output of the following code? And why is it so?
@@ -70,18 +73,19 @@ c = np.setdiff1d(a, b)
 
 print(c)
 ```
+# output =[1,2,3] it gives the the elements that exist in a and not in b
 
 - Which of the following is a function in NumPy used for carrying out Einstein summations?
 
     - [ ]  `np.tensordot()`
     - [ ]  `np.dot()`
-    - [ ]  `np.einsum()`
+    - [x]  `np.einsum()`
     - [ ]  `np.outer()`
 
 - The `np.outer` function is primarily intended for:
 
     - [ ]  Computing the tensor dot product of two arrays.
-    - [ ]  Computing the outer product of two arrays.
+    - [x]  Computing the outer product of two arrays.
     - [ ]  Computing the inner product of two arrays.
     - [ ]  Computing the cross product of two arrays.
 
@@ -105,7 +109,7 @@ I know you are all familiar with Git, but let's see how much you know about it! 
 - What is the default text editor for the Bash shell with a Windows-based Git install?
 
     - [ ] Emacs
-    - [ ] Vim
+    - [x] Vim
     - [ ] Notepad++
     - [ ] Bash
 
@@ -114,19 +118,19 @@ I know you are all familiar with Git, but let's see how much you know about it! 
     - [ ] Python
     - [ ] Java Development Kit 1.8 or newer
     - [ ] Apache Maven
-    - [ ] Nothing
+    - [x] Nothing
 
 
 - After you install Git and prior to issuing the first commit, which two configuration properties does the tool expect to be configured?
 
-    - [ ] username and email address
+    - [x] username and email address
     - [ ] username and password
     - [ ] email address and password
     - [ ] username and IP address
 
 - Which of the following commands is used to create a new Git repository?
 
-    - [ ] git init
+    - [x] git init
     - [ ] git clone
     - [ ] git commit
     - [ ] git push
@@ -134,21 +138,21 @@ I know you are all familiar with Git, but let's see how much you know about it! 
 - Which of the following commands is used to clone a remote Git repository?
 
     - [ ] git init
-    - [ ] git clone
+    - [x] git clone
     - [ ] git commit
     - [ ] git push
 
 - Which of the following commands is used to stage a file for inclusion in the next commit?
 
-    - [ ] git add
-    - [ ] git commit
+    - [x] git add
+    - [] git commit
     - [ ] git push
     - [ ] git pull
 
 - Which of the following commands is used to commit staged changes to the local repository?
 
     - [ ] git add
-    - [ ] git commit
+    - [x] git commit
     - [ ] git push
     - [ ] git pull
 
@@ -156,7 +160,7 @@ I know you are all familiar with Git, but let's see how much you know about it! 
 
     - [ ] git add
     - [ ] git commit
-    - [ ] git push
+    - [x] git push
     - [ ] git pull
 
 - Who is attributed with inventing Git?
@@ -164,7 +168,7 @@ I know you are all familiar with Git, but let's see how much you know about it! 
     - [ ] Junio Hamano
     - [ ] James Gosling
     - [ ] Kohsuke Kawaguchi
-    - [ ] Linus Torvalds
+    - [x] Linus Torvalds
 
 - After you initialize a new Git repository and create a file named git-quiz.html, which of the following commands will not work if issued?
 
@@ -172,11 +176,12 @@ I know you are all familiar with Git, but let's see how much you know about it! 
     - [ ] git status
     - [ ] git add .
     - [ ] git commit -m "git quiz web file added"
+    - [x] Nothing
 
 - Which file can you configure to ensure that certain file types are never committed to the local Git repository?
 
     - [ ] ignore.git
-    - [ ] .gitignore
+    - [x] .gitignore
     - [ ] gitignore.txt
     - [ ] git.ignore
 
@@ -188,5 +193,36 @@ You may want to check [this](https://www.youtube.com/watch?v=Q6G-J54vgKc&t=16813
 
 ## Problem Solving 🤔
 [A. Panoramix's Prediction](https://codeforces.com/problemset/problem/80/A)
+# Solution of pro1
+``` python
+x, y = (map(int, input().split()))
+def func(x):
+    i=2
+    while(i*i<=x):
+        if x%(i)==0:
+            return False
+        i+=1
+    return True
+ 
+f=True
+for i in range(x+1,y+1):
+    res=func(i)
+    if i==y and res==False:
+        print("NO")
+        f=False
+        break
+    elif res==True and i!=y:
+        print('NO')
+        f=False
+        break
+if f:
+    print('YES') 
+```
 
 [A. Again Twenty Five!](https://codeforces.com/problemset/problem/630/A)
+# Solution of pro2
+``` python
+n=int(input())
+
+print(25)
+```
